@@ -6,7 +6,7 @@ import muzycy.Muzyk;
 import muzycy.Pianista;
 import muzycy.Wokalista;
 import rider.Rider;
-import muzycy.Technik;
+import technika.Technik;
 
 public class Generator {
 	

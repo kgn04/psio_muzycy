@@ -1,5 +1,6 @@
-package muzycy;
+package technika;
 
+import muzycy.Osoba;
 import rider.Rider;
 
 public class Technik extends Osoba{
