@@ -200,40 +200,7 @@ public class Generator {
 	
 
 
-	
-//	public static void generatePair() {
-//		
-//		Random generator = new Random();
-//		Pianista pianista;
-//		Wokalista wokalista;
-//		int randomNumber = generator.nextInt(muzycy.length+1);
-//		
-//		//wybierz wokaliste
-//		
-//		while(!(muzycy[randomNumber] instanceof Wokalista)) {
-//			
-//			randomNumber = generator.nextInt(muzycy.length+1);
-//			
-//		}
-//		wokalista = (Wokalista) muzycy[randomNumber];
-//		
-//		
-//		//wybierz pianista
-//		
-//		while(!(muzycy[randomNumber] instanceof Pianista)) {
-//			
-//			randomNumber = generator.nextInt(muzycy.length+1);
-//			
-//		}
-//		pianista = (Pianista) muzycy[randomNumber];		
-//		
-//		
-//		
-//		System.out.println();
-//		
-//		
-//		
-//	}
+
 	
 	
 	
