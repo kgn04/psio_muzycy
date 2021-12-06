@@ -47,7 +47,7 @@ public class Generator {
 		System.out.println("--------------------------------");
 		System.out.println("Stawka zespolu: " + seePrice(wokalista, pianista) + " zl");
 		System.out.println("Umiejetnosci sumaryczne zespolu w skali 0-10: " + (wokalista.getPoziomUmiejetnosci()+pianista.getPoziomUmiejetnosci()));
-		System.out.println("Instrument klawiszowca: " + pianista.getModelInstrumentu());
+		System.out.println("Instrument klawiszowca: " + pianista.getInstrument() +  " " +  pianista.getModelInstrumentu());
 		
 		System.out.println("-------------------");
 		System.out.println("Szczegoly dotyczace rideru:");
