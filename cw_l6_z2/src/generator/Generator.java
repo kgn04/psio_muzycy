@@ -279,10 +279,10 @@ public class Generator {
 
 		instrument = new Instrument[4];
 
-		instrument[0] = new Saksofon("Lupifaro", 2000, 2010, "sporanowy", "B");
-		instrument[1] = new Keyboard("yamaha", 1200, 2002, "profasjonalna", "ważona", "sekwencer");
+		instrument[0] = new Saksofon("Lupifaro", 2000, 2010, "sopranowy", "B");
+		instrument[1] = new Keyboard("Yamaha", 1200, 2002, "profesjonalna", "ważona", "sekwencer");
 		instrument[2] = new Saksofon("Lupifaro", 5000, 2010, "altowy", "Es");
-		instrument[3] = new Keyboard("yamaha", 900, 2010, "srednia", "syntezatorowa", "glosniki");
+		instrument[3] = new Keyboard("Yamaha", 900, 2010, "srednia", "syntezatorowa", "glosniki");
 	}
 
 
