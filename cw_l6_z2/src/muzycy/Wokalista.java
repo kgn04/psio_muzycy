@@ -7,9 +7,9 @@ public class Wokalista extends Muzyk {
 	private String skalaKoniec;
 	private String ulubionyMikrofon;
 	
-	public Wokalista(String imie, String nazwisko, String instrument, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec, String ulubionyMikrofon) {
+	public Wokalista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec, String ulubionyMikrofon) {
 		
-		super(imie,nazwisko,instrument,poziomUmiejetnosci,stawka);
+		super(imie,nazwisko,poziomUmiejetnosci,stawka);
 		
 		this.skalaPoczatek = skalaPoczatek;
 		this.skalaKoniec = skalaKoniec;

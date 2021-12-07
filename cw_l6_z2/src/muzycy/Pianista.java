@@ -1,36 +1,26 @@
 package muzycy;
-
+import instrument.Keyboard;
 
 
 public class Pianista extends Muzyk {
-	
-	private String modelInstrumentu;
+
 	private String rodzajStatywu;
 	private boolean czySpiewa;
+
+	private Keyboard keyboard = null;
 	
 	
-	public Pianista(String imie, String nazwisko, String instrument, int poziomUmiejetnosci, int stawka, String modelInstrumentu, String rodzajStatywu, boolean czySpiewa) {
+	public Pianista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String rodzajStatywu, boolean czySpiewa) {
 		
-		super(imie,nazwisko,instrument,poziomUmiejetnosci,stawka);
-		this.modelInstrumentu = modelInstrumentu;
+		super(imie,nazwisko,poziomUmiejetnosci,stawka);
+
 		this.rodzajStatywu = rodzajStatywu;
 		this.czySpiewa = czySpiewa;
-		
 	}
 	//metoda przyslonieta z klasy muzyk
 	public void play(Pianista pianista) {
 		
 		System.out.println("Odtwarzam demo pianisty: " + pianista.getImie() + " " + pianista.getNazwisko());
-	}
-
-
-	public String getModelInstrumentu() {
-		return modelInstrumentu;
-	}
-
-
-	public void setModelInstrumentu(String modelInstrumentu) {
-		this.modelInstrumentu = modelInstrumentu;
 	}
 
 
@@ -52,6 +42,18 @@ public class Pianista extends Muzyk {
 	public void setCzySpiewa(boolean czySpiewa) {
 		this.czySpiewa = czySpiewa;
 	}
+
+
+	public String getStringKeyboard()
+	{
+		return keyboard.getStringKeyboard();
+	}
+
+	public void setKeyboard(Keyboard keyboard)
+	{
+		this.keyboard = keyboard;
+	}
+
 
 
 
