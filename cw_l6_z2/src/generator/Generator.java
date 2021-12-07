@@ -39,7 +39,7 @@ public class Generator {
 		pianista.setKeyboard(keyboard);
 		saksofonista.setSaksofon(saksofon);
 		
-		sendBrief(wokalista, pianista, technik, saksofonista, keyboard);
+		sendBrief(wokalista, pianista, technik, saksofonista);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -50,7 +50,7 @@ public class Generator {
 	
 	
 	//generowanie propozycji koncertu
-	public static void sendBrief(Wokalista wokalista, Pianista pianista, Technik technik, Saksofonista saksofonista, Keyboard keyboard) {
+	public static void sendBrief(Wokalista wokalista, Pianista pianista, Technik technik, Saksofonista saksofonista) {
 		
 		Rider rider = technik.getRider();
 		
