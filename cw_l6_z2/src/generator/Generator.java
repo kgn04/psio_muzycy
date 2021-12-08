@@ -23,7 +23,7 @@ public class Generator {
 	static Instrument[] instrument;
 	static Mikrofon[] mikrofony;
 
-	public static void main(String[] args) {
+	public static void main (String [] args) {
 
 
 		initializeRider();
@@ -263,18 +263,78 @@ public class Generator {
 	
 	//metody inicjalizujace 'baze danych'
 	public static void initializeMuzycy() {
-		
-		muzycy = new Muzyk[8];
-		
-		muzycy[0] = new Pianista("Jan", "Kowalski", 3, 200, "Pojedynczy", false);
+
+		final int n = 60;
+		muzycy = new Muzyk[n];
+
+		/// Pianiści
+
+		muzycy[0] = new Pianista("Jan", "Kowalski", 3, 400, "Pojedynczy", false);
 		muzycy[1] = new Pianista("Malgorzata", "Testowa",4, 500, "Pojedynczy", true);
 		muzycy[2] = new Pianista("Aleksander", "Prawdziwy",4, 900, "Podwójny", false);
-		muzycy[3] = new Wokalista("Janina", "Kowalska", 2, 150, "C3", "D6");
-		muzycy[4] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5");
-		muzycy[5] = new Wokalista("Kasia", "Malinowska",5, 1300, "C3", "H6");
-		muzycy[6] = new Pianista("Michal", "Kozacki",  5, 2000,  "Podwójny", false);
-		muzycy[7] = new Saksofonista("Maria", "Nowak", 4, 1000, false);
-		
+		muzycy[3] = new Pianista("Paweł", "Nowak", 4, 800, "Stolikowy", true);
+		muzycy[4] = new Pianista("Karol", "Wiśniewski", 2, 400, "Typ Z", true );
+		muzycy[5] = new Pianista("Bronisław", "Wójcik", 1, 100, "Podwójny", false);
+		muzycy[6] = new Pianista("Czesław", "Kowalczyk", 2, 300, "Pojedynczy", false);
+		muzycy[7] = new Pianista("Robert", "Lewandowski", 3, 500, "Podwójny", true);
+		muzycy[8] = new Pianista("Filip", "Hajzer", 1, 300, "Stolikowy", true);
+		muzycy[9] = new Pianista("Grzegorz", "Piotrowski", 5, 1200,"Typ Z", true);
+		muzycy[10] = new Pianista("Jerzy", "Mazur", 1, 500, "Pojedynczy", false);
+		muzycy[11] = new Pianista("Kacper", "Wojciechowski", 4, 700, "Podwójny", false);
+		muzycy[12] = new Pianista("Beata", "Krawczyk", 3, 500, "Stolikowy", true);
+		muzycy[13] = new Pianista("Danuta", "Kołodziejczyk", 2, 300,"Typ Z", true);
+		muzycy[14] = new Pianista("Katarzyna", "Grabowska", 3, 700, "Stolikowy",true);
+		muzycy[15] = new Pianista("Zofia", "Król", 1, 200, "Podwójny", false);
+		muzycy[16] = new Pianista("Anna", "Michalska", 5, 1000, "Podwójny", true);
+		muzycy[17] = new Pianista("Julia", "Kaczmarek", 3, 600, "Pojedynczy", false);
+		muzycy[18] = new Pianista("Marzena", "Jankowska", 4, 800, "Podwójny", true);
+		muzycy[19] = new Pianista("Zuzanna", "Zając", 2, 500, "Stolikowy", true);
+
+		/// Wokaliści
+
+		muzycy[20] = new Wokalista("Janina", "Kowalska", 2, 100, "C3", "D6");
+		muzycy[21] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5");
+		muzycy[22] = new Wokalista("Bartosz", "Górski", 3, 400, "D1", "A3");
+		muzycy[23] = new Wokalista("Bożena", "Malinowska", 1, 100, "H2", "B6");
+		muzycy[24] = new Wokalista("Agnieszka", "Pawlak", 5, 800, "A2", "H7");
+		muzycy[25] = new Wokalista("Edyta", "Nowicka", 4, 700, "C3", "E6");
+		muzycy[26] = new Wokalista("Halina", "Sikora", 3, 500, "F3", "C7");
+		muzycy[27] = new Wokalista("Magdalena", "Witkowski", 2, 300, "C4", "A8");
+		muzycy[28] = new Wokalista("Jolanta", "Baran", 1, 200, "H3", "C4");
+		muzycy[29] = new Wokalista("Elżbieta", "Szewczyk", 4, 700, "A3", "F5");
+		muzycy[30] = new Wokalista("Patrycja", "Szpak", 2, 300, "B4", "C6");
+		muzycy[31] = new Wokalista("Mateusz", "Rutkowski", 3, 500, "A1", "H4");
+		muzycy[32] = new Wokalista("Anastazja", "Ostrowska", 3, 600, "H2", "G5");
+		muzycy[33] = new Wokalista("Patryk", "Pietrzak", 4, 600, "G1", "H3");
+		muzycy[34] = new Wokalista("Łukasz", "Olszański", 1, 200, "C2", "Gis3");
+		muzycy[35] = new Wokalista("Sławomir", "Dudek", 5, 1000, "B1", "C5");
+		muzycy[36] = new Wokalista("Andrzej", "Wróblewski", 2, 300, "B2", "H4");
+		muzycy[37] = new Wokalista("Rafał", "Masny", 4, 600, "D2", "A4");
+		muzycy[38] = new Wokalista("Krzysztof", "Ibisz", 3, 500, "G2", "C5");
+		muzycy[39] = new Wokalista("Cezary", "Wytwer", 1, 100, "A4", "C5");
+
+		/// Saksofoniści
+
+		muzycy[40] = new Saksofonista("Maria", "Nowak", 4, 1000, false);
+		muzycy[41] = new Saksofonista("Marzena", "Dąbrowska", 2, 500, false);
+		muzycy[42] = new Saksofonista("Jakub", "Zieliński", 3, 800, false);
+		muzycy[43] = new Saksofonista("Andrzej", "Kozłowski", 1, 400, true);
+		muzycy[44] = new Saksofonista("Antoni", "Grajek", 2, 400, false);
+		muzycy[45] = new Saksofonista("Ignacy", "Krawczyk", 4, 900, true);
+		muzycy[46] = new Saksofonista("Laura", "Jasińska", 1, 300, true);
+		muzycy[47] = new Saksofonista("Emilia", "Skowrońska", 5, 1200, false);
+		muzycy[48] = new Saksofonista("Iga", "Kos", 4, 500, false);
+		muzycy[49] = new Saksofonista("Marcelina", "Nogaj", 3, 700, true);
+		muzycy[50] = new Saksofonista("Natalia", "Baranowska", 5, 1100, true);
+		muzycy[51] = new Saksofonista("Michał", "Leszczyński", 4, 600, false);
+		muzycy[52] = new Saksofonista("Dawid", "Zalewski", 1, 100,true);
+		muzycy[53] = new Saksofonista("Agata", "Tomaszewska", 2, 300, false);
+		muzycy[54] = new Saksofonista("Kinga", "Ptak", 4, 700, true);
+		muzycy[55] = new Saksofonista("Marcel", "Zawadzki", 3, 600, true);
+		muzycy[56] = new Saksofonista("Leon", "Chmielewski", 5, 1000, false);
+		muzycy[57] = new Saksofonista("Nikodem", "Sawicki", 1, 400, false);
+		muzycy[58] = new Saksofonista("Maksymilian", "Kalinowski", 2, 400, true);
+		muzycy[59] = new Saksofonista("Miłosz", "Maciejewski", 3, 500, true);
 
 	}
 	
@@ -301,24 +361,52 @@ public class Generator {
 
 	public static void initializeInstrument() {
 
-		instrument = new Instrument[4];
+		final int m = 20;
+		instrument = new Instrument[m];
+
+		/// Saksofony
 
 		instrument[0] = new Saksofon("Lupifaro", 2000, 2010, "sopranowy", "B");
-		instrument[1] = new Keyboard("Yamaha", 1200, 2002, "profesjonalna", "ważona", "sekwencer");
-		instrument[2] = new Saksofon("Lupifaro", 5000, 2010, "altowy", "Es");
-		instrument[3] = new Keyboard("Yamaha", 900, 2010, "srednia", "syntezatorowa", "glosniki");
+		instrument[1] = new Saksofon("Lupifaro", 5000, 2010, "altowy", "Es");
+		instrument[2] = new Saksofon("Selmer", 3500, 2012, "basowy", "B");
+		instrument[3] = new Saksofon("Keilwerth", 8000, 2021, "tenorowy", "Es");
+		instrument[4] = new Saksofon("Conn", 6400, 2017, "altowy", "Es");
+		instrument[5] = new Saksofon("SML", 3000, 2009, "sopranowy", "B");
+		instrument[6] = new Saksofon("Buescher", 5500, 2016, "tenorowy", "B");
+		instrument[7] = new Saksofon("B&S", 1200, 2003, "basowy", "B");
+		instrument[8] = new Saksofon("Jupiter", 9200, 2021, "sopranowy", "Es");
+		instrument[9] = new Saksofon("Cannonball", 4200, 2014, "tenorowy", "B");
+
+		/// Keyboardy
+
+		instrument[10] = new Keyboard("Yamaha", 1200, 2002, "profesjonalna", "ważona", "sekwencer");
+		instrument[11] = new Keyboard("Yamaha", 900, 2010, "srednia", "syntezatorowa", "glosniki");
+		instrument[12] = new Keyboard("Casio", 1500, 2012, "profesjonalna", "doważana", "pulpit pod nuty, zasilacz sieciowy");
+		instrument[13] = new Keyboard("Korg", 1000, 2016, "srednia", "mloteczkowa", "glosniki, pulpit pod nuty");
+		instrument[14] = new Keyboard("Roland", 1300, 2004, "profesjonalna", "syntezatorowa", "zasilacz sieciowy");
+		instrument[15] = new Keyboard("Gear4music", 2500, 2021, "srednia", "pelna", "sekwencer, glosniki");
+		instrument[16] = new Keyboard("Korg", 1800, 2012, "profesjonalna", "syntezatorowa", "glosniki, sekwencer");
+		instrument[17] = new Keyboard("Casio", 2300, 2017, "profesjonalna", "ważona", "pulpit pod nuty");
+		instrument[18] = new Keyboard("Roland", 800, 2009, "srenia", "mloteczkowa", "sekwencer");
+		instrument[19] = new Keyboard("Gear4music", 3000, 2021, "profesjonalna", "pelna", "sekwencer, pulpit pod nuty, glosniki, zasilacz sieciowy");
 	}
 
 
 	public static void initializeMikrofon() {
-		
-		mikrofony = new Mikrofon[3];
+
+		final int k = 10;
+		mikrofony = new Mikrofon[k];
 		
 		mikrofony[0] = new Mikrofon("Sennheiser", "e835", true);
 		mikrofony[1] = new Mikrofon("Carol", "GS-607", false);
 		mikrofony[2] = new Mikrofon("BEHRINGER", "8500", true);
-				
-		
+		mikrofony[3] = new Mikrofon("Rode", "NT-USB", false);
+		mikrofony[4] = new Mikrofon("Sontronics", "SOLO", true);
+		mikrofony[5] = new Mikrofon("AKG", "WMS40", true);
+		mikrofony[6] = new Mikrofon("Shure", "SM 58", true);
+		mikrofony[7] = new Mikrofon("Blitzwolf", "TR458", false);
+		mikrofony[8] = new Mikrofon("AKG", "C-544L", true);
+		mikrofony[9] = new Mikrofon("ICHOS", "5900626834223", false);
 	}
 
 
