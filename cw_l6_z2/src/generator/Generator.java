@@ -274,13 +274,13 @@ public class Generator {
 		muzycy[2] = new Pianista("Aleksander", "Prawdziwy",4, 900, "Podwójny", false);
 		muzycy[3] = new Pianista("Paweł", "Nowak", 4, 800, "Stolikowy", true);
 		muzycy[4] = new Pianista("Karol", "Wiśniewski", 2, 400, "Typ Z", true );
-		muzycy[5] = new Pianista("Bronisław", :"Wójcik", 1, 100, "Podwójny", false);
+		muzycy[5] = new Pianista("Bronisław", "Wójcik", 1, 100, "Podwójny", false);
 		muzycy[6] = new Pianista("Czesław", "Kowalczyk", 2, 300, "Pojedynczy", false);
 		muzycy[7] = new Pianista("Robert", "Lewandowski", 3, 500, "Podwójny", true);
 		muzycy[8] = new Pianista("Filip", "Hajzer", 1, 300, "Stolikowy", true);
 		muzycy[9] = new Pianista("Grzegorz", "Piotrowski", 5, 1200,"Typ Z", true);
 		muzycy[10] = new Pianista("Jerzy", "Mazur", 1, 500, "Pojedynczy", false);
-		muzycy[11] = new Pianista("Kacper", "Wojciechowski", 4, 700, "Podwójny");
+		muzycy[11] = new Pianista("Kacper", "Wojciechowski", 4, 700, "Podwójny", false);
 		muzycy[12] = new Pianista("Beata", "Krawczyk", 3, 500, "Stolikowy", true);
 		muzycy[13] = new Pianista("Danuta", "Kołodziejczyk", 2, 300,"Typ Z", true);
 		muzycy[14] = new Pianista("Katarzyna", "Grabowska", 3, 700, "Stolikowy",true);
@@ -385,7 +385,7 @@ public class Generator {
 		instrument[13] = new Keyboard("Korg", 1000, 2016, "srednia", "mloteczkowa", "glosniki, pulpit pod nuty");
 		instrument[14] = new Keyboard("Roland", 1300, 2004, "profesjonalna", "syntezatorowa", "zasilacz sieciowy");
 		instrument[15] = new Keyboard("Gear4music", 2500, 2021, "srednia", "pelna", "sekwencer, glosniki");
-		instrument[16] = new Keyboard("Korg", 1800, 2012 "profesjonalna", "syntezatorowa", "glosniki, sekwencer");
+		instrument[16] = new Keyboard("Korg", 1800, 2012, "profesjonalna", "syntezatorowa", "glosniki, sekwencer");
 		instrument[17] = new Keyboard("Casio", 2300, 2017, "profesjonalna", "ważona", "pulpit pod nuty");
 		instrument[18] = new Keyboard("Roland", 800, 2009, "srenia", "mloteczkowa", "sekwencer");
 		instrument[19] = new Keyboard("Gear4music", 3000, 2021, "profesjonalna", "pelna", "sekwencer, pulpit pod nuty, glosniki, zasilacz sieciowy");
@@ -394,7 +394,7 @@ public class Generator {
 
 	public static void initializeMikrofon() {
 
-		final int k = 10
+		final int k = 10;
 		mikrofony = new Mikrofon[k];
 		
 		mikrofony[0] = new Mikrofon("Sennheiser", "e835", true);
