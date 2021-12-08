@@ -1,27 +1,51 @@
 package muzycy;
-
+import sprzet.Mikrofon;
 
 public class Wokalista extends Muzyk {
 	
 	private String skalaPoczatek;
 	private String skalaKoniec;
-	private String ulubionyMikrofon;
 	
-	public Wokalista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec, String ulubionyMikrofon) {
+	private Mikrofon mikro = null;
+	
+	public Wokalista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec) {
 		
 		super(imie,nazwisko,poziomUmiejetnosci,stawka);
 		
 		this.skalaPoczatek = skalaPoczatek;
 		this.skalaKoniec = skalaKoniec;
-		this.ulubionyMikrofon = ulubionyMikrofon;
 		
 	}
 	//metoda przyslonieta z klasy muzyk
 	public void play(Wokalista wokalista) {
 		
-		System.out.println("Odtwarzam demo wokalisty: " + wokalista.getImie() + " " + wokalista.getNazwisko());
+		System.out.print("Odtwarzam demo wokalisty: " + wokalista.getImie() + " " + wokalista.getNazwisko());
+		System.out.println(": oOooooOo lalala!!");
 	}
-
+	
+	public void wybierzMikrofon(String marka, String model, boolean CzyDynamiczny) {
+		this.mikro = new Mikrofon(marka, model, CzyDynamiczny);
+	}
+	
+	public void wyswietlUlubionyMikrofon() {
+		
+		System.out.print(mikro.getMarka() + " " + mikro.getModel() + ". ");
+		
+		if(mikro.getCzyDynamiczny())
+			System.out.println("I musi byc on dynamiczny.");
+		else
+			System.out.println("Musi byc on pojemnosciowy.");
+		
+	}
+	
+	public void setMikrofon(Mikrofon m) {
+		this.mikro = m;
+	}
+	
+	public Mikrofon getMikrofon() {
+		return mikro;
+	}
+	
 	public String getSkalaPoczatek() {
 		return skalaPoczatek;
 	}
@@ -37,16 +61,5 @@ public class Wokalista extends Muzyk {
 	public void setSkalaKoniec(String skalaKoniec) {
 		this.skalaKoniec = skalaKoniec;
 	}
-
-	public String getUlubionyMikrofon() {
-		return ulubionyMikrofon;
-	}
-
-	public void setUlubionyMikrofon(String ulubionyMikrofon) {
-		this.ulubionyMikrofon = ulubionyMikrofon;
-	}
-
-
 	
-
 }

@@ -11,6 +11,7 @@ import rider.Rider;
 import technika.Technik;
 import muzycy.Saksofonista;
 import instrument.Instrument;
+import sprzet.Mikrofon;
 
 public class Generator {
 
@@ -20,6 +21,7 @@ public class Generator {
 	static Rider najbogatszy;
 	static Technik[] technicy;
 	static Instrument[] instrument;
+	static Mikrofon[] mikrofony;
 
 	public static void main(String[] args) {
 
@@ -28,14 +30,17 @@ public class Generator {
 		initializeMuzycy();
 		initializeTechnik();
 		initializeInstrument();
+		initializeMikrofon();
 		
 		Wokalista wokalista = generateWokalista();
+		Mikrofon mikrofon = generateMikrofon();
 		Pianista pianista = generatePianista();
 		Saksofonista saksofonista = generateSaksofonista();
 		Keyboard keyboard = generateKeyboard();
 		Saksofon saksofon = generateSaksofon();
 		Technik technik = generateTechnik(wokalista, pianista, saksofonista);
-
+		
+		wokalista.setMikrofon(mikrofon);
 		pianista.setKeyboard(keyboard);
 		saksofonista.setSaksofon(saksofon);
 		
@@ -45,7 +50,8 @@ public class Generator {
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
 //		pianista.play(pianista);
 //		wokalista.play(wokalista);
-
+		
+		
 	}
 	
 	
@@ -64,7 +70,8 @@ public class Generator {
 		System.out.println("Instrument saksofonisty: "+ saksofonista.getStringSaksofon());
 		System.out.println("-------------------");
 		System.out.println("Szczegoly dotyczace rideru:");
-		System.out.println("Mikrofon wokalistki: " + wokalista.getUlubionyMikrofon());
+		System.out.print("Mikrofon wokalistki: "); 
+		wokalista.wyswietlUlubionyMikrofon();
 		System.out.println("Przekaski: " + rider.getPrzekaski());
 		System.out.println("W przypadku wyjazdu, minimalny standard hotelu: " + rider.getHotel());
 		System.out.println("Minimalne wymiary sceny: " + rider.getStageSize());
@@ -233,6 +240,24 @@ public class Generator {
 
 	}
 
+	public static Mikrofon generateMikrofon() {
+
+		Random generator = new Random();
+		Mikrofon mikrofon;
+		int randomNumber = generator.nextInt(mikrofony.length);
+
+		//wybierz keyboard
+
+
+
+		randomNumber = generator.nextInt(mikrofony.length);
+
+		mikrofon = mikrofony[randomNumber];
+
+
+		return mikrofon;
+
+	}
 
 	
 	
@@ -244,14 +269,13 @@ public class Generator {
 		muzycy[0] = new Pianista("Jan", "Kowalski", 3, 200, "Pojedynczy", false);
 		muzycy[1] = new Pianista("Malgorzata", "Testowa",4, 500, "Pojedynczy", true);
 		muzycy[2] = new Pianista("Aleksander", "Prawdziwy",4, 900, "Podwójny", false);
-		muzycy[3] = new Wokalista("Janina", "Kowalska", 2, 150, "C3", "D6", "Shure sm58");
-		muzycy[4] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5", "Akg c121");
-		muzycy[5] = new Wokalista("Kasia", "Malinowska",5, 1300, "C3", "H6", "Shure sm7b");
+		muzycy[3] = new Wokalista("Janina", "Kowalska", 2, 150, "C3", "D6");
+		muzycy[4] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5");
+		muzycy[5] = new Wokalista("Kasia", "Malinowska",5, 1300, "C3", "H6");
 		muzycy[6] = new Pianista("Michal", "Kozacki",  5, 2000,  "Podwójny", false);
 		muzycy[7] = new Saksofonista("Maria", "Nowak", 4, 1000, false);
 		
-		
-		
+
 	}
 	
 	public static void initializeRider() {
@@ -286,15 +310,16 @@ public class Generator {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
+	public static void initializeMikrofon() {
+		
+		mikrofony = new Mikrofon[3];
+		
+		mikrofony[0] = new Mikrofon("Sennheiser", "e835", true);
+		mikrofony[1] = new Mikrofon("Carol", "GS-607", false);
+		mikrofony[2] = new Mikrofon("BEHRINGER", "8500", true);
+				
+		
 	}
+
+
+}
