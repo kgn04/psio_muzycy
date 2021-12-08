@@ -12,6 +12,7 @@ import technika.Technik;
 import muzycy.Saksofonista;
 import instrument.Instrument;
 import sprzet.Mikrofon;
+import zespol.Zespol;
 
 public class Generator {
 
@@ -22,6 +23,7 @@ public class Generator {
 	static Technik[] technicy;
 	static Instrument[] instrument;
 	static Mikrofon[] mikrofony;
+	final static int budzet = 7000;
 
 	public static void main(String[] args) {
 
@@ -45,6 +47,7 @@ public class Generator {
 		saksofonista.setSaksofon(saksofon);
 		
 		sendBrief(wokalista, pianista, technik, saksofonista);
+		Zespol.optimalTeam(technicy, muzycy, budzet);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -320,6 +323,7 @@ public class Generator {
 				
 		
 	}
+			
 
 
 }
