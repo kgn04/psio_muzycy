@@ -77,7 +77,7 @@ public class Generator {
 		System.out.println("Minimalne wymiary sceny: " + rider.getStageSize());
 		System.out.println("Czy potrzebni handzi? " + rider.isHandsNeeded());
 		System.out.println("Technik: " + technik.getImie() + " " + technik.getNazwisko());
-		System.out.println("Poziom umiejetnosci technika: " + technik.getPoziom_umiejetnosci() + "/10");
+		System.out.println("Poziom umiejetnosci technika: " + technik.getPoziom_umiejetnosci() + "/5");
 		System.out.println("Preferowany stol: " + technik.getPreferowany_stol());
 		System.out.println("Stawka technika: " + technik.getStawka() + " zl");
 		System.out.println("----------------");
@@ -104,9 +104,9 @@ public class Generator {
 		
 		int price = seePrice(wokalista, pianista, saksofonista);
 		
-		if(price < 1200) {
+		if(price < 1800) {
 			return technicy[0];
-		} else if (price < 2000) {
+		} else if (price < 2500) {
 			return technicy[1];
 		} else {
 			return technicy[2];
@@ -292,9 +292,9 @@ public class Generator {
 		
 		technicy = new Technik[3];
 		
-		technicy[0] = new Technik("Adam", "Kowalski", 300, 4, "Behringer X32", podstawowy);
-		technicy[1] = new Technik("Pawel", "Testowy", 500, 7, "Yamaha CL5", bogatszy);
-		technicy[2] = new Technik("Gawel", "Niepawel", 800, 9, "Soundcraft Si800", najbogatszy);
+		technicy[0] = new Technik("Adam", "Kowalski", 300, 2, "Behringer X32", podstawowy);
+		technicy[1] = new Technik("Pawel", "Testowy", 500, 4, "Yamaha CL5", bogatszy);
+		technicy[2] = new Technik("Gawel", "Niepawel", 800, 5, "Soundcraft Si800", najbogatszy);
 		
 		
 	}
