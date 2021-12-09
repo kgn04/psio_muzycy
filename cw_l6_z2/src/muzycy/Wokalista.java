@@ -1,4 +1,5 @@
 package muzycy;
+import repertuar.Piosenka;
 import sprzet.Mikrofon;
 
 public class Wokalista extends Muzyk {
@@ -8,9 +9,9 @@ public class Wokalista extends Muzyk {
 	
 	private Mikrofon mikro = null;
 	
-	public Wokalista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec) {
+	public Wokalista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String skalaPoczatek, String skalaKoniec, Piosenka[]tab) {
 		
-		super(imie,nazwisko,poziomUmiejetnosci,stawka);
+		super(imie,nazwisko,poziomUmiejetnosci,stawka,tab);
 		
 		this.skalaPoczatek = skalaPoczatek;
 		this.skalaKoniec = skalaKoniec;

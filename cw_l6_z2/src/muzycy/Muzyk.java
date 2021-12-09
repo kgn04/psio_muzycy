@@ -1,16 +1,20 @@
 package muzycy;
 
+import repertuar.Piosenka;
+
 public abstract class Muzyk extends Osoba{
 
 	private int poziomUmiejetnosci;
 	private int stawka;
+	private Piosenka[] repertuar ;
 	
-	public Muzyk(String imie, String nazwisko, int poziomUmiejetnosci, int stawka) {
+	public Muzyk(String imie, String nazwisko, int poziomUmiejetnosci, int stawka,Piosenka[] repertuar) {
 		
 		super(imie, nazwisko);
 
 		this.poziomUmiejetnosci = poziomUmiejetnosci;
 		this.stawka = stawka;
+		this.repertuar=repertuar;
 		
 		
 	
@@ -44,10 +48,13 @@ public abstract class Muzyk extends Osoba{
 	public void setStawka(int stawka) {
 		this.stawka = stawka;
 	}
-	
-	
-	
-	
-	
 
+
+	public Piosenka[] getRepertuar() {
+		return repertuar;
+	}
+
+	public void setRepertuar(Piosenka[] repertuar) {
+		this.repertuar = repertuar;
+	}
 }

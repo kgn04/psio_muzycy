@@ -1,5 +1,6 @@
 package muzycy;
 import instrument.Keyboard;
+import repertuar.Piosenka;
 
 
 public class Pianista extends Muzyk {
@@ -10,9 +11,9 @@ public class Pianista extends Muzyk {
 	private Keyboard keyboard = null;
 	
 	
-	public Pianista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String rodzajStatywu, boolean czySpiewa) {
+	public Pianista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String rodzajStatywu, boolean czySpiewa, Piosenka[]tab) {
 		
-		super(imie,nazwisko,poziomUmiejetnosci,stawka);
+		super(imie,nazwisko,poziomUmiejetnosci,stawka,tab);
 
 		this.rodzajStatywu = rodzajStatywu;
 		this.czySpiewa = czySpiewa;

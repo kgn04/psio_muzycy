@@ -7,6 +7,7 @@ import instrument.Saksofon;
 import muzycy.Muzyk;
 import muzycy.Pianista;
 import muzycy.Wokalista;
+import repertuar.Piosenka;
 import rider.Rider;
 import technika.Technik;
 import muzycy.Saksofonista;
@@ -22,11 +23,13 @@ public class Generator {
 	static Technik[] technicy;
 	static Instrument[] instrument;
 	static Mikrofon[] mikrofony;
+	static Piosenka[] baza;
 
 	public static void main (String [] args) {
 
 
 		initializeRider();
+		initializeBazaPiosenek();
 		initializeMuzycy();
 		initializeTechnik();
 		initializeInstrument();
@@ -45,6 +48,7 @@ public class Generator {
 		saksofonista.setSaksofon(saksofon);
 		
 		sendBrief(wokalista, pianista, technik, saksofonista);
+		wylosujRepertuar(baza);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -269,72 +273,72 @@ public class Generator {
 
 		/// Pianiści
 
-		muzycy[0] = new Pianista("Jan", "Kowalski", 3, 400, "Pojedynczy", false);
-		muzycy[1] = new Pianista("Malgorzata", "Testowa",4, 500, "Pojedynczy", true);
-		muzycy[2] = new Pianista("Aleksander", "Prawdziwy",4, 900, "Podwójny", false);
-		muzycy[3] = new Pianista("Paweł", "Nowak", 4, 800, "Stolikowy", true);
-		muzycy[4] = new Pianista("Karol", "Wiśniewski", 2, 400, "Typ Z", true );
-		muzycy[5] = new Pianista("Bronisław", "Wójcik", 1, 100, "Podwójny", false);
-		muzycy[6] = new Pianista("Czesław", "Kowalczyk", 2, 300, "Pojedynczy", false);
-		muzycy[7] = new Pianista("Robert", "Lewandowski", 3, 500, "Podwójny", true);
-		muzycy[8] = new Pianista("Filip", "Hajzer", 1, 300, "Stolikowy", true);
-		muzycy[9] = new Pianista("Grzegorz", "Piotrowski", 5, 1200,"Typ Z", true);
-		muzycy[10] = new Pianista("Jerzy", "Mazur", 1, 500, "Pojedynczy", false);
-		muzycy[11] = new Pianista("Kacper", "Wojciechowski", 4, 700, "Podwójny", false);
-		muzycy[12] = new Pianista("Beata", "Krawczyk", 3, 500, "Stolikowy", true);
-		muzycy[13] = new Pianista("Danuta", "Kołodziejczyk", 2, 300,"Typ Z", true);
-		muzycy[14] = new Pianista("Katarzyna", "Grabowska", 3, 700, "Stolikowy",true);
-		muzycy[15] = new Pianista("Zofia", "Król", 1, 200, "Podwójny", false);
-		muzycy[16] = new Pianista("Anna", "Michalska", 5, 1000, "Podwójny", true);
-		muzycy[17] = new Pianista("Julia", "Kaczmarek", 3, 600, "Pojedynczy", false);
-		muzycy[18] = new Pianista("Marzena", "Jankowska", 4, 800, "Podwójny", true);
-		muzycy[19] = new Pianista("Zuzanna", "Zając", 2, 500, "Stolikowy", true);
+		muzycy[0] = new Pianista("Jan", "Kowalski", 3, 400, "Pojedynczy", false,wylosujRepertuar(baza));
+		muzycy[1] = new Pianista("Malgorzata", "Testowa",4, 500, "Pojedynczy", true,wylosujRepertuar(baza));
+		muzycy[2] = new Pianista("Aleksander", "Prawdziwy",4, 900, "Podwójny", false,wylosujRepertuar(baza));
+		muzycy[3] = new Pianista("Paweł", "Nowak", 4, 800, "Stolikowy", true,wylosujRepertuar(baza));
+		muzycy[4] = new Pianista("Karol", "Wiśniewski", 2, 400, "Typ Z", true,wylosujRepertuar(baza));
+		muzycy[5] = new Pianista("Bronisław", "Wójcik", 1, 100, "Podwójny", false,wylosujRepertuar(baza));
+		muzycy[6] = new Pianista("Czesław", "Kowalczyk", 2, 300, "Pojedynczy", false,wylosujRepertuar(baza));
+		muzycy[7] = new Pianista("Robert", "Lewandowski", 3, 500, "Podwójny", true,wylosujRepertuar(baza));
+		muzycy[8] = new Pianista("Filip", "Hajzer", 1, 300, "Stolikowy", true,wylosujRepertuar(baza));
+		muzycy[9] = new Pianista("Grzegorz", "Piotrowski", 5, 1200,"Typ Z", true,wylosujRepertuar(baza));
+		muzycy[10] = new Pianista("Jerzy", "Mazur", 1, 500, "Pojedynczy", false,wylosujRepertuar(baza));
+		muzycy[11] = new Pianista("Kacper", "Wojciechowski", 4, 700, "Podwójny", false,wylosujRepertuar(baza));
+		muzycy[12] = new Pianista("Beata", "Krawczyk", 3, 500, "Stolikowy", true,wylosujRepertuar(baza));
+		muzycy[13] = new Pianista("Danuta", "Kołodziejczyk", 2, 300,"Typ Z", true,wylosujRepertuar(baza));
+		muzycy[14] = new Pianista("Katarzyna", "Grabowska", 3, 700, "Stolikowy",true,wylosujRepertuar(baza));
+		muzycy[15] = new Pianista("Zofia", "Król", 1, 200, "Podwójny", false,wylosujRepertuar(baza));
+		muzycy[16] = new Pianista("Anna", "Michalska", 5, 1000, "Podwójny", true,wylosujRepertuar(baza));
+		muzycy[17] = new Pianista("Julia", "Kaczmarek", 3, 600, "Pojedynczy", false,wylosujRepertuar(baza));
+		muzycy[18] = new Pianista("Marzena", "Jankowska", 4, 800, "Podwójny", true,wylosujRepertuar(baza));
+		muzycy[19] = new Pianista("Zuzanna", "Zając", 2, 500, "Stolikowy", true,wylosujRepertuar(baza));
 
 		/// Wokaliści
 
-		muzycy[20] = new Wokalista("Janina", "Kowalska", 2, 100, "C3", "D6");
-		muzycy[21] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5");
-		muzycy[22] = new Wokalista("Bartosz", "Górski", 3, 400, "D1", "A3");
-		muzycy[23] = new Wokalista("Bożena", "Malinowska", 1, 100, "H2", "B6");
-		muzycy[24] = new Wokalista("Agnieszka", "Pawlak", 5, 800, "A2", "H7");
-		muzycy[25] = new Wokalista("Edyta", "Nowicka", 4, 700, "C3", "E6");
-		muzycy[26] = new Wokalista("Halina", "Sikora", 3, 500, "F3", "C7");
-		muzycy[27] = new Wokalista("Magdalena", "Witkowski", 2, 300, "C4", "A8");
-		muzycy[28] = new Wokalista("Jolanta", "Baran", 1, 200, "H3", "C4");
-		muzycy[29] = new Wokalista("Elżbieta", "Szewczyk", 4, 700, "A3", "F5");
-		muzycy[30] = new Wokalista("Patrycja", "Szpak", 2, 300, "B4", "C6");
-		muzycy[31] = new Wokalista("Mateusz", "Rutkowski", 3, 500, "A1", "H4");
-		muzycy[32] = new Wokalista("Anastazja", "Ostrowska", 3, 600, "H2", "G5");
-		muzycy[33] = new Wokalista("Patryk", "Pietrzak", 4, 600, "G1", "H3");
-		muzycy[34] = new Wokalista("Łukasz", "Olszański", 1, 200, "C2", "Gis3");
-		muzycy[35] = new Wokalista("Sławomir", "Dudek", 5, 1000, "B1", "C5");
-		muzycy[36] = new Wokalista("Andrzej", "Wróblewski", 2, 300, "B2", "H4");
-		muzycy[37] = new Wokalista("Rafał", "Masny", 4, 600, "D2", "A4");
-		muzycy[38] = new Wokalista("Krzysztof", "Ibisz", 3, 500, "G2", "C5");
-		muzycy[39] = new Wokalista("Cezary", "Wytwer", 1, 100, "A4", "C5");
+		muzycy[20] = new Wokalista("Janina", "Kowalska", 2, 100, "C3", "D6",wylosujRepertuar(baza));
+		muzycy[21] = new Wokalista("Arnold", "Fajny",  4, 600, "F3", "H5",wylosujRepertuar(baza));
+		muzycy[22] = new Wokalista("Bartosz", "Górski", 3, 400, "D1", "A3",wylosujRepertuar(baza));
+		muzycy[23] = new Wokalista("Bożena", "Malinowska", 1, 100, "H2", "B6",wylosujRepertuar(baza));
+		muzycy[24] = new Wokalista("Agnieszka", "Pawlak", 5, 800, "A2", "H7",wylosujRepertuar(baza));
+		muzycy[25] = new Wokalista("Edyta", "Nowicka", 4, 700, "C3", "E6",wylosujRepertuar(baza));
+		muzycy[26] = new Wokalista("Halina", "Sikora", 3, 500, "F3", "C7",wylosujRepertuar(baza));
+		muzycy[27] = new Wokalista("Magdalena", "Witkowski", 2, 300, "C4", "A8",wylosujRepertuar(baza));
+		muzycy[28] = new Wokalista("Jolanta", "Baran", 1, 200, "H3", "C4",wylosujRepertuar(baza));
+		muzycy[29] = new Wokalista("Elżbieta", "Szewczyk", 4, 700, "A3", "F5",wylosujRepertuar(baza));
+		muzycy[30] = new Wokalista("Patrycja", "Szpak", 2, 300, "B4", "C6",wylosujRepertuar(baza));
+		muzycy[31] = new Wokalista("Mateusz", "Rutkowski", 3, 500, "A1", "H4",wylosujRepertuar(baza));
+		muzycy[32] = new Wokalista("Anastazja", "Ostrowska", 3, 600, "H2", "G5",wylosujRepertuar(baza));
+		muzycy[33] = new Wokalista("Patryk", "Pietrzak", 4, 600, "G1", "H3",wylosujRepertuar(baza));
+		muzycy[34] = new Wokalista("Łukasz", "Olszański", 1, 200, "C2", "Gis3",wylosujRepertuar(baza));
+		muzycy[35] = new Wokalista("Sławomir", "Dudek", 5, 1000, "B1", "C5",wylosujRepertuar(baza));
+		muzycy[36] = new Wokalista("Andrzej", "Wróblewski", 2, 300, "B2", "H4",wylosujRepertuar(baza));
+		muzycy[37] = new Wokalista("Rafał", "Masny", 4, 600, "D2", "A4",wylosujRepertuar(baza));
+		muzycy[38] = new Wokalista("Krzysztof", "Ibisz", 3, 500, "G2", "C5",wylosujRepertuar(baza));
+		muzycy[39] = new Wokalista("Cezary", "Wytwer", 1, 100, "A4", "C5",wylosujRepertuar(baza));
 
 		/// Saksofoniści
 
-		muzycy[40] = new Saksofonista("Maria", "Nowak", 4, 1000, false);
-		muzycy[41] = new Saksofonista("Marzena", "Dąbrowska", 2, 500, false);
-		muzycy[42] = new Saksofonista("Jakub", "Zieliński", 3, 800, false);
-		muzycy[43] = new Saksofonista("Andrzej", "Kozłowski", 1, 400, true);
-		muzycy[44] = new Saksofonista("Antoni", "Grajek", 2, 400, false);
-		muzycy[45] = new Saksofonista("Ignacy", "Krawczyk", 4, 900, true);
-		muzycy[46] = new Saksofonista("Laura", "Jasińska", 1, 300, true);
-		muzycy[47] = new Saksofonista("Emilia", "Skowrońska", 5, 1200, false);
-		muzycy[48] = new Saksofonista("Iga", "Kos", 4, 500, false);
-		muzycy[49] = new Saksofonista("Marcelina", "Nogaj", 3, 700, true);
-		muzycy[50] = new Saksofonista("Natalia", "Baranowska", 5, 1100, true);
-		muzycy[51] = new Saksofonista("Michał", "Leszczyński", 4, 600, false);
-		muzycy[52] = new Saksofonista("Dawid", "Zalewski", 1, 100,true);
-		muzycy[53] = new Saksofonista("Agata", "Tomaszewska", 2, 300, false);
-		muzycy[54] = new Saksofonista("Kinga", "Ptak", 4, 700, true);
-		muzycy[55] = new Saksofonista("Marcel", "Zawadzki", 3, 600, true);
-		muzycy[56] = new Saksofonista("Leon", "Chmielewski", 5, 1000, false);
-		muzycy[57] = new Saksofonista("Nikodem", "Sawicki", 1, 400, false);
-		muzycy[58] = new Saksofonista("Maksymilian", "Kalinowski", 2, 400, true);
-		muzycy[59] = new Saksofonista("Miłosz", "Maciejewski", 3, 500, true);
+		muzycy[40] = new Saksofonista("Maria", "Nowak", 4, 1000, false,wylosujRepertuar(baza));
+		muzycy[41] = new Saksofonista("Marzena", "Dąbrowska", 2, 500, false,wylosujRepertuar(baza));
+		muzycy[42] = new Saksofonista("Jakub", "Zieliński", 3, 800, false,wylosujRepertuar(baza));
+		muzycy[43] = new Saksofonista("Andrzej", "Kozłowski", 1, 400, true,wylosujRepertuar(baza));
+		muzycy[44] = new Saksofonista("Antoni", "Grajek", 2, 400, false,wylosujRepertuar(baza));
+		muzycy[45] = new Saksofonista("Ignacy", "Krawczyk", 4, 900, true,wylosujRepertuar(baza));
+		muzycy[46] = new Saksofonista("Laura", "Jasińska", 1, 300, true,wylosujRepertuar(baza));
+		muzycy[47] = new Saksofonista("Emilia", "Skowrońska", 5, 1200, false,wylosujRepertuar(baza));
+		muzycy[48] = new Saksofonista("Iga", "Kos", 4, 500, false,wylosujRepertuar(baza));
+		muzycy[49] = new Saksofonista("Marcelina", "Nogaj", 3, 700, true,wylosujRepertuar(baza));
+		muzycy[50] = new Saksofonista("Natalia", "Baranowska", 5, 1100, true,wylosujRepertuar(baza));
+		muzycy[51] = new Saksofonista("Michał", "Leszczyński", 4, 600, false,wylosujRepertuar(baza));
+		muzycy[52] = new Saksofonista("Dawid", "Zalewski", 1, 100,true,wylosujRepertuar(baza));
+		muzycy[53] = new Saksofonista("Agata", "Tomaszewska", 2, 300, false,wylosujRepertuar(baza));
+		muzycy[54] = new Saksofonista("Kinga", "Ptak", 4, 700, true,wylosujRepertuar(baza));
+		muzycy[55] = new Saksofonista("Marcel", "Zawadzki", 3, 600, true,wylosujRepertuar(baza));
+		muzycy[56] = new Saksofonista("Leon", "Chmielewski", 5, 1000, false,wylosujRepertuar(baza));
+		muzycy[57] = new Saksofonista("Nikodem", "Sawicki", 1, 400, false,wylosujRepertuar(baza));
+		muzycy[58] = new Saksofonista("Maksymilian", "Kalinowski", 2, 400, true,wylosujRepertuar(baza));
+		muzycy[59] = new Saksofonista("Miłosz", "Maciejewski", 3, 500, true,wylosujRepertuar(baza));
 
 	}
 	
@@ -408,6 +412,35 @@ public class Generator {
 		mikrofony[8] = new Mikrofon("AKG", "C-544L", true);
 		mikrofony[9] = new Mikrofon("ICHOS", "5900626834223", false);
 	}
+	public static void initializeBazaPiosenek(){
+		baza=new Piosenka[15];
+
+		baza[0]=new Piosenka("Cheri cheri lady","pop","1982");
+		baza[1]=new Piosenka("Ooop!...I did it again","pop","2000");
+		baza[2]=new Piosenka("Circus","pop","2008");
+		baza[3]=new Piosenka("Toxic","pop","2003");
+		baza[4]=new Piosenka("Umbrella","pop","2008");
+		baza[5]=new Piosenka("505","rock","2007");
+		baza[6]=new Piosenka("Let the Bad Times Roll","rock","2021");
+		baza[7]=new Piosenka("Africa","pop","1985");
+		baza[8]=new Piosenka("California","rock alternatywny","1999");
+		baza[9]=new Piosenka("Cant't stop","rock alternatywny","2002");
+		baza[10]=new Piosenka("We will rock you","rock","1977");
+		baza[10]=new Piosenka("Bohemian rhapsody","rock","1975");
+		baza[10]=new Piosenka("Mniej niż zero","pop-rock","1981");
+		baza[10]=new Piosenka("Kryzysowa nazeczona","soft rock","1983");
+		baza[10]=new Piosenka("Bad romance","pop","2009");
+		baza[10]=new Piosenka("Shallow","pop","2018");
+	}
+	public static Piosenka[] wylosujRepertuar(Piosenka[] P){
+		Random generator= new Random();
+		Piosenka[] repertuar= new Piosenka[generator.nextInt(15)+1];
+		for(int i=0;i<repertuar.length;i++){
+			repertuar[i]=P[i];
+		}
+		return repertuar;
+	}
+
 
 
 }
