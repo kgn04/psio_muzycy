@@ -13,6 +13,7 @@ import technika.Technik;
 import muzycy.Saksofonista;
 import instrument.Instrument;
 import sprzet.Mikrofon;
+import repertuar.Krytyk;
 
 public class Generator {
 
@@ -339,6 +340,8 @@ public class Generator {
 		muzycy[57] = new Saksofonista("Nikodem", "Sawicki", 1, 400, false,wylosujRepertuar(baza));
 		muzycy[58] = new Saksofonista("Maksymilian", "Kalinowski", 2, 400, true,wylosujRepertuar(baza));
 		muzycy[59] = new Saksofonista("Miłosz", "Maciejewski", 3, 500, true,wylosujRepertuar(baza));
+		
+		Krytyk.ocenaUmiejetnosci(muzycy);
 
 	}
 	
