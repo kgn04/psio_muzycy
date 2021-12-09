@@ -416,7 +416,7 @@ public class Generator {
 		mikrofony[9] = new Mikrofon("ICHOS", "5900626834223", false);
 	}
 	public static void initializeBazaPiosenek(){
-		baza=new Piosenka[15];
+		baza=new Piosenka[16];
 
 		baza[0]=new Piosenka("Cheri cheri lady","pop","1982");
 		baza[1]=new Piosenka("Ooop!...I did it again","pop","2000");
@@ -429,11 +429,11 @@ public class Generator {
 		baza[8]=new Piosenka("California","rock alternatywny","1999");
 		baza[9]=new Piosenka("Cant't stop","rock alternatywny","2002");
 		baza[10]=new Piosenka("We will rock you","rock","1977");
-		baza[10]=new Piosenka("Bohemian rhapsody","rock","1975");
-		baza[10]=new Piosenka("Mniej niż zero","pop-rock","1981");
-		baza[10]=new Piosenka("Kryzysowa nazeczona","soft rock","1983");
-		baza[10]=new Piosenka("Bad romance","pop","2009");
-		baza[10]=new Piosenka("Shallow","pop","2018");
+		baza[11]=new Piosenka("Bohemian rhapsody","rock","1975");
+		baza[12]=new Piosenka("Mniej niż zero","pop-rock","1981");
+		baza[13]=new Piosenka("Kryzysowa nazeczona","soft rock","1983");
+		baza[14]=new Piosenka("Bad romance","pop","2009");
+		baza[15]=new Piosenka("Shallow","pop","2018");
 	}
 	public static Piosenka[] wylosujRepertuar(Piosenka[] P){
 		Random generator= new Random();
