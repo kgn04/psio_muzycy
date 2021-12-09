@@ -33,20 +33,14 @@ public class Generator {
 		initializeBazaPiosenek();
 		initializeMuzycy();
 		initializeTechnik();
-		initializeInstrument();
-		initializeMikrofon();
+	
 		
 		Wokalista wokalista = generateWokalista();
-		Mikrofon mikrofon = generateMikrofon();
 		Pianista pianista = generatePianista();
 		Saksofonista saksofonista = generateSaksofonista();
-		Keyboard keyboard = generateKeyboard();
-		Saksofon saksofon = generateSaksofon();
 		Technik technik = generateTechnik(wokalista, pianista, saksofonista);
 		
-		wokalista.setMikrofon(mikrofon);
-		pianista.setKeyboard(keyboard);
-		saksofonista.setSaksofon(saksofon);
+
 		
 		sendBrief(wokalista, pianista, technik, saksofonista);
 		wylosujRepertuar(baza);
@@ -251,9 +245,7 @@ public class Generator {
 		Mikrofon mikrofon;
 		int randomNumber = generator.nextInt(mikrofony.length);
 
-		//wybierz keyboard
-
-
+		//wybierz mikrofon
 
 		randomNumber = generator.nextInt(mikrofony.length);
 
@@ -340,6 +332,31 @@ public class Generator {
 		muzycy[57] = new Saksofonista("Nikodem", "Sawicki", 1, 400, false,wylosujRepertuar(baza));
 		muzycy[58] = new Saksofonista("Maksymilian", "Kalinowski", 2, 400, true,wylosujRepertuar(baza));
 		muzycy[59] = new Saksofonista("Miłosz", "Maciejewski", 3, 500, true,wylosujRepertuar(baza));
+		
+		initializeInstrument();
+		initializeMikrofon();
+		
+		
+		for(int i=0; i<muzycy.length; i++) {
+			
+			if((muzycy[i]) instanceof Wokalista) {
+				
+				Mikrofon mikrofon = generateMikrofon();
+				
+				((Wokalista)(muzycy[i])).setMikrofon(mikrofon);
+			}
+			
+			if((muzycy[i]) instanceof Saksofonista) {
+				Saksofon saksofon = generateSaksofon();
+				((Saksofonista)(muzycy[i])).setSaksofon(saksofon);
+			}
+			
+			if((muzycy[i]) instanceof Pianista) {
+				Keyboard keyboard = generateKeyboard();
+				((Pianista)(muzycy[i])).setKeyboard(keyboard);
+			}
+		}
+		
 		
 		Krytyk.ocenaUmiejetnosci(muzycy);
 

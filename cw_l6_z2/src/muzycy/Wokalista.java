@@ -33,9 +33,9 @@ public class Wokalista extends Muzyk {
 		System.out.print(mikro.getMarka() + " " + mikro.getModel() + ". ");
 		
 		if(mikro.getCzyDynamiczny())
-			System.out.println("I musi byc on dynamiczny.");
+			System.out.println("Jest on dynamiczny.");
 		else
-			System.out.println("Musi byc on pojemnosciowy.");
+			System.out.println("Nie jest on dynamiczny.");
 		
 	}
 	
