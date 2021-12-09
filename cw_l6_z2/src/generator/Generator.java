@@ -12,6 +12,7 @@ import muzycy.Wokalista;
 import repertuar.Piosenka;
 import rider.Rider;
 import technika.Technik;
+import zespol.Zespol;
 import muzycy.Saksofonista;
 import instrument.Instrument;
 import sprzet.Mikrofon;
@@ -51,8 +52,8 @@ public class Generator {
 
 		
 		
-		sendBrief(wokalista, pianista, technik, saksofonista);
-		
+		//sendBrief(wokalista, pianista, technik, saksofonista);
+		Zespol.optimalTeam(technicy, muzycy, 4500);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -93,6 +94,8 @@ public class Generator {
 		System.out.println("--------------------------------");
 		System.out.println("Repertuar:");
 		wydrukujRepertuar(wokalista, pianista, saksofonista);
+		
+
 
 		
 		

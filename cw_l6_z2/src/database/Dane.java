@@ -36,7 +36,7 @@ public class Dane {
 		initializeRider();
 		initializeTechnik();
 
-		poprawCeneMuzykow(muzycy);		
+		poprawCeneMuzykow(muzycy);	
 	}
 	
 
