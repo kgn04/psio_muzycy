@@ -36,6 +36,8 @@ public class Dane {
 		initializeRider();
 		initializeTechnik();
 
+		
+		//hotfix
 		poprawCeneMuzykow(muzycy);	
 	}
 	

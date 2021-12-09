@@ -21,17 +21,19 @@ import database.Dane;
 
 public class Generator {
 
-	static Muzyk[] muzycy = Dane.getMuzycy();
-	static Rider podstawowy = Dane.getPodstawowy();
-	static Rider bogatszy = Dane.getBogatszy();
-	static Rider najbogatszy = Dane.getNajbogatszy();
-	static Technik[] technicy = Dane.getTechnicy();
-	static Instrument[] instrument = Dane.getInstrument();
-	static Mikrofon[] mikrofony = Dane.getMikrofony();
-	static Piosenka[] baza = Dane.getBaza();
+	static Muzyk[] muzycy;
+	static Rider podstawowy;
+	static Rider bogatszy;
+	static Rider najbogatszy;
+	static Technik[] technicy;
+	static Instrument[] instrument;
+	static Mikrofon[] mikrofony;
+	static Piosenka[] baza;
 
 	public static void main (String [] args) {
 
+		
+		//pobranie danych z 'bazy'
 		Dane.initializeDatabase();
 		instrument = Dane.getInstrument();
 		mikrofony = Dane.getMikrofony();
@@ -52,8 +54,8 @@ public class Generator {
 
 		
 		
-		sendBrief(wokalista, pianista, technik, saksofonista);
-		//Zespol.optimalTeam(technicy, muzycy, 1500);
+		//sendBrief(wokalista, pianista, technik, saksofonista);
+		Zespol.optimalTeam(technicy, muzycy, 8000);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -73,6 +75,7 @@ public class Generator {
 		System.out.println("--------------------------------");
 		System.out.println("\u001B[31m" +"Stawka zespolu: " + seePrice(wokalista, pianista, saksofonista) + " zl"+ "\u001B[0m");
 		System.out.println("Umiejetnosci sumaryczne zespolu w skali 0-15: " + (wokalista.getPoziomUmiejetnosci()+pianista.getPoziomUmiejetnosci()+saksofonista.getPoziomUmiejetnosci()));
+		System.out.println("W tym klawiszowiec: " + pianista.getPoziomUmiejetnosci() + "/5 Saksofonista: " + saksofonista.getPoziomUmiejetnosci() + "/5 Wokalista: " + wokalista.getPoziomUmiejetnosci() + "/5");
 		System.out.println("Instrument klawiszowca: " + pianista.getStringKeyboard());
 
 
@@ -101,7 +104,7 @@ public class Generator {
 		
 	}
 	
-	
+	//wydrukuj liste zawierajaca utwory wszystkich muzyków, bez powtórzeń
 	public static void wydrukujRepertuar(Wokalista wokalista, Pianista pianista, Saksofonista saksofonista) {
 		
 		ArrayList<Piosenka> repertuar = new ArrayList<Piosenka>();
@@ -150,7 +153,7 @@ public class Generator {
 	
 	
 	
-
+	//przydzielenie technika w zależności od budżetu
 	public static Technik generateTechnik(Wokalista wokalista, Pianista pianista, Saksofonista saksofonista) {
 		
 		int price = seePrice(wokalista, pianista, saksofonista);
@@ -169,21 +172,7 @@ public class Generator {
 	
 	
 	
-	//generowanie przypadkowego trio i wydrukowanie imienia i nazwiska
-	public static void generateTrio() {
-		
-		Wokalista wokalista = generateWokalista();
-		Pianista pianista = generatePianista();
-		Saksofonista saksofonista = generateSaksofonista();
-		
-		System.out.println("Wygenerowano trio:");
-		System.out.println("Pianista: " + pianista.getImie() + " " + pianista.getNazwisko());
-		System.out.println("Wokalista: " + wokalista.getImie() + " " + wokalista.getNazwisko());
-		System.out.println("Saksofonista: "+saksofonista.getImie()+" "+saksofonista.getNazwisko());
-		
-		
-		
-	}
+
 	
 	//generowanie przypadkowego wokalisty
 	public static Wokalista generateWokalista() {
@@ -290,7 +279,7 @@ public class Generator {
 		return saksofon;
 
 	}
-
+	//generowanie losowego mikrofonu
 	public static Mikrofon generateMikrofon() {
 
 		Random generator = new Random();
@@ -308,6 +297,22 @@ public class Generator {
 
 	
 
+	}
+	
+	//generowanie przypadkowego trio i wydrukowanie imienia i nazwiska, metoda nieużywana
+	public static void generateTrio() {
+		
+		Wokalista wokalista = generateWokalista();
+		Pianista pianista = generatePianista();
+		Saksofonista saksofonista = generateSaksofonista();
+		
+		System.out.println("Wygenerowano trio:");
+		System.out.println("Pianista: " + pianista.getImie() + " " + pianista.getNazwisko());
+		System.out.println("Wokalista: " + wokalista.getImie() + " " + wokalista.getNazwisko());
+		System.out.println("Saksofonista: "+saksofonista.getImie()+" "+saksofonista.getNazwisko());
+		
+		
+		
 	}
 	
 
