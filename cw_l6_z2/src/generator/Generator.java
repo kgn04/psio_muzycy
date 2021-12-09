@@ -52,8 +52,8 @@ public class Generator {
 
 		
 		
-		//sendBrief(wokalista, pianista, technik, saksofonista);
-		Zespol.optimalTeam(technicy, muzycy, 4500);
+		sendBrief(wokalista, pianista, technik, saksofonista);
+		//Zespol.optimalTeam(technicy, muzycy, 1500);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
