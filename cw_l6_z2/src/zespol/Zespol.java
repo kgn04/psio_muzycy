@@ -53,10 +53,7 @@ public class Zespol {
         
         showOptimalTeam(zespol,budzet);
 		
-//		if ( zespol == null )
-//            System.out.println( "Z danej grupy nie mozna utworzyc zespolu w twoim budzecie!" );
-//
-//        else System.out.println( "Technik:\n" + zespol.getTechnik().getImie()+ " "+ zespol.getTechnik().getNazwisko()+ "\n\nWokalista:\n" + zespol.getWokalista().toString() + "" + "\n\nPianista:\n" + zespol.getPianista().toString() + "\n\nSaksofonista:\n" + zespol.getSaksofonista().toString());
+
 	}
 	
 	public static Zespol wybierzZespol( List <Technik> technicy , List <Wokalista> wokalisci , List <Pianista> pianisci , List <Saksofonista> saksofonisci , int budzet )
@@ -138,25 +135,9 @@ public class Zespol {
             System.out.println( "Z danej grupy nie mozna utworzyc zespolu w twoim budzecie!" );
 
         else {
-        	//int poziomUmiejetnosci= zespol.getTechnik().getPoziom_umiejetnosci()+zespol.getPianista().getPoziomUmiejetnosci()+zespol.getSaksofonista().getPoziomUmiejetnosci()+zespol.getWokalista().getPoziomUmiejetnosci();
-        	
         	System.out.println("\n-------------------------");
-        	System.out.println("Budzet na nowy zespol: "+budzet+
-        			"\nKoszt zespolu wraz z technikiem o mozliwie najwyzszym poziomie umiejetnosci: "+ 
-        			(zespol.getTechnik().getStawka()+
-            		zespol.getPianista().getStawka()+
-            		zespol.getSaksofonista().getStawka()+
-            		zespol.getWokalista().getStawka())+
-        			
-        		"\nPoziom umiejetnosci zespolu wraz z technikiem (w skali 0-20): "+ (zespol.getTechnik().getPoziom_umiejetnosci()+
-        		zespol.getPianista().getPoziomUmiejetnosci()+
-        		zespol.getSaksofonista().getPoziomUmiejetnosci()+
-        		zespol.getWokalista().getPoziomUmiejetnosci()));
-        	
-System.out.println( "\nTechnik:\n" + zespol.getTechnik().getImie()+ " "+ zespol.getTechnik().getNazwisko()+ 
-        			"\n\nWokalista:\n" + zespol.getWokalista().getImie() + " " +zespol.getWokalista().getNazwisko()+ 
-        			"\n\nPianista:\n" + zespol.getPianista().getImie()+" "+zespol.getPianista().getNazwisko() + 
-        			"\n\nSaksofonista:\n" + zespol.getSaksofonista().getImie()+" "+zespol.getSaksofonista().getNazwisko());
+        	System.out.println("\nNajbardziej optymalny zespol pod wzgledem ceny oraz poziomu umiejetnosci w stosunku do budzetu wynoszacego: "+budzet);
+        	Generator.sendBrief(zespol.getWokalista(), zespol.getPianista(), zespol.getTechnik(), zespol.getSaksofonista());
    	
         }
 	
