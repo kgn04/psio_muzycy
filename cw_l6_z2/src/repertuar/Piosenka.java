@@ -11,6 +11,14 @@ public class Piosenka {
         this.gatunek=gatunek;
         this.rokWydania=rokWydania;
     }
+    
+    
+    @Override
+    public String toString() {
+		
+    	return this.tytul + " , " + this.gatunek + " , Rok wydania: " + this.rokWydania;
+    }
+    
 
     public String getTytul() {
         return tytul;
