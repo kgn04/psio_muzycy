@@ -70,13 +70,13 @@ public class Generator {
 		
 		System.out.println("Brief koncertu " + wokalista.getImie() + " " + wokalista.getNazwisko() + " przy akompaniamencie " + pianista.getImie() + " " + pianista.getNazwisko()+", "+saksofonista.getImie()+" "+saksofonista.getNazwisko());
 		System.out.println("--------------------------------");
-		System.out.println("Stawka zespolu: " + seePrice(wokalista, pianista, saksofonista) + " zl");
+		System.out.println("\u001B[31m" +"Stawka zespolu: " + seePrice(wokalista, pianista, saksofonista) + " zl"+ "\u001B[0m");
 		System.out.println("Umiejetnosci sumaryczne zespolu w skali 0-15: " + (wokalista.getPoziomUmiejetnosci()+pianista.getPoziomUmiejetnosci()+saksofonista.getPoziomUmiejetnosci()));
 		System.out.println("Instrument klawiszowca: " + pianista.getStringKeyboard());
 
 
 		System.out.println("Instrument saksofonisty: "+ saksofonista.getStringSaksofon());
-		System.out.println("-------------------");
+		System.out.println("--------------------------------");
 		System.out.println("Szczegoly dotyczace rideru:");
 		System.out.print("Mikrofon wokalistki: "); 
 		wokalista.wyswietlUlubionyMikrofon();
@@ -88,9 +88,9 @@ public class Generator {
 		System.out.println("Poziom umiejetnosci technika: " + technik.getPoziom_umiejetnosci() + "/5");
 		System.out.println("Preferowany stol: " + technik.getPreferowany_stol());
 		System.out.println("Stawka technika: " + technik.getStawka() + " zl");
-		System.out.println("----------------");
-		System.out.println("Koszt zespolu: " + (seePrice(wokalista, pianista, saksofonista) + technik.getStawka()) + " zl");
-		System.out.println("-----------------");
+		System.out.println("--------------------------------");
+		System.out.println("\u001B[31m" + "Koszt zespolu: " + (seePrice(wokalista, pianista, saksofonista) + technik.getStawka()) + " zl" + "\u001B[0m");
+		System.out.println("--------------------------------");
 		System.out.println("Repertuar:");
 		wydrukujRepertuar(wokalista, pianista, saksofonista);
 
@@ -101,24 +101,21 @@ public class Generator {
 	
 	public static void wydrukujRepertuar(Wokalista wokalista, Pianista pianista, Saksofonista saksofonista) {
 		
-		Piosenka[] repertuarWokalisty = wokalista.getRepertuar();
-		Piosenka[] repertuarPianisty = pianista.getRepertuar();
-		Piosenka[] repertuarSaksofonisty = saksofonista.getRepertuar();
 		ArrayList<Piosenka> repertuar = new ArrayList<Piosenka>();
 		
-		repertuar.addAll(Arrays.asList(repertuarWokalisty));
+		repertuar.addAll(Arrays.asList(wokalista.getRepertuar()));
 		
 		for(int i = 0; i < pianista.getRepertuar().length; i++) {
 			
-			if(repertuar.contains(repertuarPianisty[i]) == false) {
-				repertuar.add(repertuarPianisty[i]);
+			if(repertuar.contains(pianista.getRepertuar()[i]) == false) {
+				repertuar.add(pianista.getRepertuar()[i]);
 			}
 			
 		}
 		for(int i = 0; i < saksofonista.getRepertuar().length; i++) {
 			
-			if(repertuar.contains(repertuarSaksofonisty[i]) == false) {
-				repertuar.add(repertuarSaksofonisty[i]);
+			if(repertuar.contains(saksofonista.getRepertuar()[i]) == false) {
+				repertuar.add(saksofonista.getRepertuar()[i]);
 			}
 			
 		}
