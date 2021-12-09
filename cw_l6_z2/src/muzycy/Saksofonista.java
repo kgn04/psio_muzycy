@@ -1,6 +1,7 @@
 package muzycy;
 import instrument.Keyboard;
 import instrument.Saksofon;
+import repertuar.Piosenka;
 
 public class Saksofonista extends Muzyk
 {
@@ -8,9 +9,9 @@ public class Saksofonista extends Muzyk
     private Saksofon saksofon = null;
 
 
-    public Saksofonista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, boolean czySiedzi) {
+    public Saksofonista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, boolean czySiedzi, Piosenka[]tab) {
 
-        super(imie, nazwisko,poziomUmiejetnosci, stawka);
+        super(imie, nazwisko,poziomUmiejetnosci, stawka,tab);
 
         this.czySiedzi = czySiedzi;
 
