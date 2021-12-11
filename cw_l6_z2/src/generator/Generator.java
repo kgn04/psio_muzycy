@@ -1,5 +1,6 @@
 package generator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -18,32 +19,41 @@ import instrument.Instrument;
 import sprzet.Mikrofon;
 import repertuar.Krytyk;
 import database.Dane;
+import database.TextIO;
 
 public class Generator {
 
-	static Muzyk[] muzycy = Dane.getMuzycy();
-	static Rider podstawowy = Dane.getPodstawowy();
-	static Rider bogatszy = Dane.getBogatszy();
-	static Rider najbogatszy = Dane.getNajbogatszy();
-	static Technik[] technicy = Dane.getTechnicy();
-	static Instrument[] instrument = Dane.getInstrument();
-	static Mikrofon[] mikrofony = Dane.getMikrofony();
-	static Piosenka[] baza = Dane.getBaza();
+	static Muzyk[] muzycy;
+	static Rider podstawowy;
+	static Rider bogatszy;
+	static Rider najbogatszy;
+	static Technik[] technicy;
+	static Instrument[] instrument;
+	static Mikrofon[] mikrofony;
+	static Piosenka[] baza;
 
-	public static void main (String [] args) {
+	public static void main (String [] args) throws ClassNotFoundException, IOException {
+		
 
+
+		TextIO.pobierzDane();
 		Dane.initializeDatabase();
-		instrument = Dane.getInstrument();
-		mikrofony = Dane.getMikrofony();
-		baza = Dane.getBaza();
-		muzycy = Dane.getMuzycy();
+
+		
 		podstawowy = Dane.getPodstawowy();
 		bogatszy = Dane.getBogatszy();
 		najbogatszy = Dane.getNajbogatszy();
 		technicy = Dane.getTechnicy();
-
-		Dane.przydzielInstrumenty();
 		
+		
+//		TextIO.zresetujDane();
+//		muzycy[0].setImie("Test");
+//		Dane.wydrukujMuzykow(muzycy);
+		
+		
+
+		
+
 		
 		Wokalista wokalista = generateWokalista();
 		Pianista pianista = generatePianista();
@@ -53,7 +63,9 @@ public class Generator {
 		
 		
 		sendBrief(wokalista, pianista, technik, saksofonista);
-		//Zespol.optimalTeam(technicy, muzycy, 1500);
+		
+		
+//		Zespol.optimalTeam(technicy, muzycy, 1500);
 		
 //		System.out.println("-----------------");
 //		System.out.println("Demonstracja mechanizmu polimorfizmu na przykladzie metody play:");
@@ -61,6 +73,8 @@ public class Generator {
 //		wokalista.play(wokalista);
 		
 		
+		
+		TextIO.zapiszDane();
 	}
 	
 	
@@ -309,8 +323,48 @@ public class Generator {
 	
 
 	}
-	
 
+
+	public static Muzyk[] getMuzycy() {
+		return muzycy;
+	}
+
+
+	public static void setMuzycy(Muzyk[] muzycy) {
+		Generator.muzycy = muzycy;
+	}
+
+
+	public static Instrument[] getInstrument() {
+		return instrument;
+	}
+
+
+	public static void setInstrument(Instrument[] instrument) {
+		Generator.instrument = instrument;
+	}
+
+
+	public static Mikrofon[] getMikrofony() {
+		return mikrofony;
+	}
+
+
+	public static void setMikrofony(Mikrofon[] mikrofony) {
+		Generator.mikrofony = mikrofony;
+	}
+
+
+	public static Piosenka[] getBaza() {
+		return baza;
+	}
+
+
+	public static void setBaza(Piosenka[] baza) {
+		Generator.baza = baza;
+	}
+	
+	
 
 
 

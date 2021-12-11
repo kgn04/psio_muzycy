@@ -1,8 +1,10 @@
 package muzycy;
 
+import java.io.Serializable;
+
 import repertuar.Piosenka;
 
-public abstract class Muzyk extends Osoba{
+public abstract class Muzyk extends Osoba implements Serializable{
 
 	private int poziomUmiejetnosci;
 	private int stawka;
@@ -19,6 +21,9 @@ public abstract class Muzyk extends Osoba{
 		
 	
 	}
+	public Muzyk() {
+		
+	}
 	public static void play(Muzyk muzyk) {
 		
 		System.out.println("Odtwarzam demo muzyka...");
@@ -27,7 +32,10 @@ public abstract class Muzyk extends Osoba{
 	}
 
 
-
+	@Override
+	public String toString() {
+		return "Muzyk " + this.getImie() + " " + this.getNazwisko();
+	}
 
 
 	public int getPoziomUmiejetnosci() {

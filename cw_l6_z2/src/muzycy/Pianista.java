@@ -1,15 +1,19 @@
 package muzycy;
+import java.io.Serializable;
+
 import instrument.Keyboard;
 import repertuar.Piosenka;
 
 
-public class Pianista extends Muzyk {
+public class Pianista extends Muzyk{
 
 	private String rodzajStatywu;
 	private boolean czySpiewa;
-
 	private Keyboard keyboard = null;
 	
+	public Pianista() {
+		
+	}
 	
 	public Pianista(String imie, String nazwisko, int poziomUmiejetnosci, int stawka, String rodzajStatywu, boolean czySpiewa, Piosenka[]tab) {
 		
