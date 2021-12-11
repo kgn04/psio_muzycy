@@ -1,6 +1,8 @@
 package instrument;
 
-public abstract class Instrument {
+import java.io.Serializable;
+
+public abstract class Instrument implements Serializable{
     private String producent;
     private int cena;
     private int rok_produkcji;

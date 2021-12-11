@@ -1,6 +1,8 @@
 package repertuar;
 
-public class Piosenka {
+import java.io.Serializable;
+
+public class Piosenka implements Serializable{
 
     private String tytul;
     private String gatunek;

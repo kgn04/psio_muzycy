@@ -228,23 +228,23 @@ public class Dane {
 	
 	public static void przydzielInstrumenty() {
 		
-		for(int i=0; i<muzycy.length; i++) {
+		for(int i=0; i<Generator.getMuzycy().length; i++) {
 			
-			if((muzycy[i]) instanceof Wokalista) {
+			if((Generator.getMuzycy()[i]) instanceof Wokalista) {
 				
 				Mikrofon mikrofon = Generator.generateMikrofon();
 				
-				((Wokalista)(muzycy[i])).setMikrofon(mikrofon);
+				((Wokalista)(Generator.getMuzycy()[i])).setMikrofon(mikrofon);
 			}
 			
-			if((muzycy[i]) instanceof Saksofonista) {
+			if((Generator.getMuzycy()[i]) instanceof Saksofonista) {
 				Saksofon saksofon = Generator.generateSaksofon();
-				((Saksofonista)(muzycy[i])).setSaksofon(saksofon);
+				((Saksofonista)(Generator.getMuzycy()[i])).setSaksofon(saksofon);
 			}
 			
-			if((muzycy[i]) instanceof Pianista) {
+			if((Generator.getMuzycy()[i]) instanceof Pianista) {
 				Keyboard keyboard = Generator.generateKeyboard();
-				((Pianista)(muzycy[i])).setKeyboard(keyboard);
+				((Pianista)(Generator.getMuzycy()[i])).setKeyboard(keyboard);
 			}
 		}
 		
@@ -268,6 +268,13 @@ public class Dane {
 	
 		}
 		
+	}
+	
+	public static void wydrukujMuzykow(Muzyk[] muzycy) {
+		for(int i = 0; i< muzycy.length; i++) {
+			
+			System.out.println(muzycy[i]);
+		}
 	}
 	
 	

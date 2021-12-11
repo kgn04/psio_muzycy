@@ -1,6 +1,8 @@
 package muzycy;
 
-abstract public class Osoba {
+import java.io.Serializable;
+
+abstract public class Osoba implements Serializable{
 
 	private String imie;
 	private String nazwisko;
@@ -9,6 +11,9 @@ abstract public class Osoba {
 		
 		this.imie = imie;
 		this.nazwisko = nazwisko;
+		
+	}
+	public Osoba() {
 		
 	}
 

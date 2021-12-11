@@ -1,6 +1,8 @@
 package sprzet;
 
-public class Mikrofon {
+import java.io.Serializable;
+
+public class Mikrofon implements Serializable{
 	private String marka;
 	private String model;
 	private boolean CzyDynamiczny;
