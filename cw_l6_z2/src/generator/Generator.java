@@ -340,9 +340,9 @@ public class Generator {
 	//generowanie przypadkowego trio i wydrukowanie imienia i nazwiska, metoda nieużywana
 	public static void generateTrio() {
 		
-		Wokalista wokalista = generateWokalista();
-		Pianista pianista = generatePianista();
-		Saksofonista saksofonista = generateSaksofonista();
+		Wokalista wokalista = (Wokalista)generateMuzyk("class muzycy.Wokalista");
+		Pianista pianista = (Pianista)generateMuzyk("class muzycy.Pianista");
+		Saksofonista saksofonista = (Saksofonista)generateMuzyk("class muzycy.Saksofonista");
 		
 		System.out.println("Wygenerowano trio:");
 		System.out.println("Pianista: " + pianista.getImie() + " " + pianista.getNazwisko());
