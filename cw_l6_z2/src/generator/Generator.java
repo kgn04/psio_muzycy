@@ -54,9 +54,9 @@ public class Generator {
 		
 
 		
-		Wokalista wokalista = generateMuzyk("class muzycy.Wokalista");
-		Pianista pianista = generateMuzyk("class muzycy.Pianista");
-		Saksofonista saksofonista = generateMuzyk("class muzycy.Saksofonista");
+		Wokalista wokalista = (Wokalista)generateMuzyk("class muzycy.Wokalista");
+		Pianista pianista = (Pianista)generateMuzyk("class muzycy.Pianista");
+		Saksofonista saksofonista = (Saksofonista)generateMuzyk("class muzycy.Saksofonista");
 		Technik technik = generateTechnik(wokalista, pianista, saksofonista);
 
 		
