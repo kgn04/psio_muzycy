@@ -197,7 +197,7 @@ public class Generator {
 
 	
 	//generowanie przypadkowego wokalisty
-	public static Wokalista generateWokalista() {
+	/*public static Wokalista generateWokalista() {
 		
 		Random generator = new Random();
 		Wokalista wokalista;
@@ -258,7 +258,7 @@ public class Generator {
 
 		return saksofonista;
 
-	}
+	} */
 
 	//zastepuje generateKeyboard i generateSaksofon
 	public static Instrument generateInstrument(String jakiInstrument) //format wprowadzania: "class packageName.className" na przyklad "class instrument.Keyboard"
@@ -276,7 +276,7 @@ public class Generator {
 	}
 	
 	//generowanie losowego keyboarda
-	public static Keyboard generateKeyboard() {
+	/*public static Keyboard generateKeyboard() {
 
 		Random generator = new Random();
 		Keyboard keyboard;
@@ -315,7 +315,8 @@ public class Generator {
 
 		return saksofon;
 
-	}
+	} */
+	
 	//generowanie losowego mikrofonu
 	public static Mikrofon generateMikrofon() {
 
