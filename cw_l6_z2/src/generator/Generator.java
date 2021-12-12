@@ -54,9 +54,9 @@ public class Generator {
 		
 
 		
-		Wokalista wokalista = generateWokalista();
-		Pianista pianista = generatePianista();
-		Saksofonista saksofonista = generateSaksofonista();
+		Wokalista wokalista = generateMuzyk("class muzycy.Wokalista");
+		Pianista pianista = generateMuzyk("class muzycy.Pianista");
+		Saksofonista saksofonista = generateMuzyk("class muzycy.Saksofonista");
 		Technik technik = generateTechnik(wokalista, pianista, saksofonista);
 
 		
@@ -180,8 +180,20 @@ public class Generator {
 		
 	}
 	
-	
-	
+	//zastepuje metody generateWokaliska, generatePianista, generateSaksofonista
+	public static Muzyk generateMuzyk(String jakiMuzyk) //format wprowadzania: "class packageName.className" na przyklad "class muzycy.Pianista"
+	{
+		Random generator = new Random();
+		int randomNumber;
+		
+		do
+		{
+			randomNumber = generator.nextInt(muzycy.length);
+			
+		}while(!(muzycy[randomNumber].getClass().toString().equals(jakiMuzyk)));
+		
+		return muzycy[randomNumber];
+	}
 
 	
 	//generowanie przypadkowego wokalisty
@@ -248,6 +260,21 @@ public class Generator {
 
 	}
 
+	//zastepuje generateKeyboard i generateSaksofon
+	public static Instrument generateInstrument(String jakiInstrument) //format wprowadzania: "class packageName.className" na przyklad "class instrument.Keyboard"
+	{
+		Random generator = new Random();
+		int randomNumber;
+		
+		do{
+			
+			randomNumber = generator.nextInt(instrument.length);
+			
+		}while(!(instrument[randomNumber].getClass().toString().equals(jakiInstrument)));
+		
+		return instrument[randomNumber];
+	}
+	
 	//generowanie losowego keyboarda
 	public static Keyboard generateKeyboard() {
 
