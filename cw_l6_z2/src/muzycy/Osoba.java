@@ -21,6 +21,10 @@ abstract public class Osoba implements Serializable{
 	public int getStawka() {
 		return stawka;
 	}
+	
+	public void setStawka(int stawka) {
+		this.stawka = stawka;
+	}
 
 
 

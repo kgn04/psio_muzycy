@@ -15,6 +15,7 @@ import repertuar.Piosenka;
 import rider.Rider;
 import sprzet.Mikrofon;
 import technika.Technik;
+import muzycy.*;
 
 import java.util.Random;
 
@@ -41,7 +42,18 @@ public class Dane {
 
 		
 		//hotfix
-
+		poprawCeneMuzykow(muzycy);	
+		
+	}
+	
+public static void poprawCeneMuzykow(Muzyk[] muzycy) {
+		
+		//hotfix
+		for(int i = 0; i < muzycy.length; i++) {
+			
+			((Osoba)muzycy[i]).setStawka(300*muzycy[i].getPoziomUmiejetnosci());
+	
+		}
 		
 	}
 	
