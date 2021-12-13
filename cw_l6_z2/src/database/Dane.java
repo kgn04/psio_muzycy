@@ -238,12 +238,12 @@ public class Dane {
 			}
 			
 			if((Generator.getMuzycy()[i]) instanceof Saksofonista) {
-				Saksofon saksofon = Generator.generateSaksofon();
+				Saksofon saksofon = (Saksofon)Generator.generateInstrument("class instrument.Saksofon");
 				((Saksofonista)(Generator.getMuzycy()[i])).setSaksofon(saksofon);
 			}
 			
 			if((Generator.getMuzycy()[i]) instanceof Pianista) {
-				Keyboard keyboard = Generator.generateKeyboard();
+				Keyboard keyboard = (Keyboard)Generator.generateInstrument("class instrument.Keyboard");
 				((Pianista)(Generator.getMuzycy()[i])).setKeyboard(keyboard);
 			}
 		}

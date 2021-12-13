@@ -54,9 +54,9 @@ public class Generator {
 		
 
 		
-		Wokalista wokalista = generateWokalista();
-		Pianista pianista = generatePianista();
-		Saksofonista saksofonista = generateSaksofonista();
+		Wokalista wokalista = (Wokalista)generateMuzyk("class muzycy.Wokalista");
+		Pianista pianista = (Pianista)generateMuzyk("class muzycy.Pianista");
+		Saksofonista saksofonista = (Saksofonista)generateMuzyk("class muzycy.Saksofonista");
 		Technik technik = generateTechnik(wokalista, pianista, saksofonista);
 
 		
@@ -180,12 +180,24 @@ public class Generator {
 		
 	}
 	
-	
-	
+	//zastepuje metody generateWokaliska, generatePianista, generateSaksofonista
+	public static Muzyk generateMuzyk(String jakiMuzyk) //format wprowadzania: "class packageName.className" na przyklad "class muzycy.Pianista"
+	{
+		Random generator = new Random();
+		int randomNumber;
+		
+		do
+		{
+			randomNumber = generator.nextInt(muzycy.length);
+			
+		}while(!(muzycy[randomNumber].getClass().toString().equals(jakiMuzyk)));
+		
+		return muzycy[randomNumber];
+	}
 
 	
 	//generowanie przypadkowego wokalisty
-	public static Wokalista generateWokalista() {
+	/*public static Wokalista generateWokalista() {
 		
 		Random generator = new Random();
 		Wokalista wokalista;
@@ -246,10 +258,25 @@ public class Generator {
 
 		return saksofonista;
 
-	}
+	} */
 
+	//zastepuje generateKeyboard i generateSaksofon
+	public static Instrument generateInstrument(String jakiInstrument) //format wprowadzania: "class packageName.className" na przyklad "class instrument.Keyboard"
+	{
+		Random generator = new Random();
+		int randomNumber;
+		
+		do{
+			
+			randomNumber = generator.nextInt(instrument.length);
+			
+		}while(!(instrument[randomNumber].getClass().toString().equals(jakiInstrument)));
+		
+		return instrument[randomNumber];
+	}
+	
 	//generowanie losowego keyboarda
-	public static Keyboard generateKeyboard() {
+	/*public static Keyboard generateKeyboard() {
 
 		Random generator = new Random();
 		Keyboard keyboard;
@@ -288,7 +315,8 @@ public class Generator {
 
 		return saksofon;
 
-	}
+	} */
+	
 	//generowanie losowego mikrofonu
 	public static Mikrofon generateMikrofon() {
 
@@ -312,9 +340,9 @@ public class Generator {
 	//generowanie przypadkowego trio i wydrukowanie imienia i nazwiska, metoda nieużywana
 	public static void generateTrio() {
 		
-		Wokalista wokalista = generateWokalista();
-		Pianista pianista = generatePianista();
-		Saksofonista saksofonista = generateSaksofonista();
+		Wokalista wokalista = (Wokalista)generateMuzyk("class muzycy.Wokalista");
+		Pianista pianista = (Pianista)generateMuzyk("class muzycy.Pianista");
+		Saksofonista saksofonista = (Saksofonista)generateMuzyk("class muzycy.Saksofonista");
 		
 		System.out.println("Wygenerowano trio:");
 		System.out.println("Pianista: " + pianista.getImie() + " " + pianista.getNazwisko());
