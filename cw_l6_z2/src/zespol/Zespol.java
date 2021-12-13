@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import generator.Generator;
 import muzycy.Muzyk;
 import muzycy.Osoba;
 import muzycy.Pianista;
 import muzycy.Saksofonista;
 import muzycy.Wokalista;
 import technika.Technik;
-import generator.Generator;
-
+import java.lang.Math;
+import static java.lang.Math.*;
 public class Zespol {
 	
 	private Technik technik;
@@ -118,7 +119,10 @@ public class Zespol {
                     T[i][j] = T[i][j - 1];
 
                 else
-                    T[i][j] = max(T[i-1][j] , T[i-1][j-osoby.get(i-1).getStawka()] + ((Muzyk)osoby.get(i-1)).getPoziomUmiejetnosci());
+                {
+                T[i][j] = max(T[i-1][j] , T[i-1][j-osoby.get(i-1).getStawka()] + ((Muzyk)osoby.get(i-1)).getPoziomUmiejetnosci());	
+                	
+                }
             }
 
         List <Osoba> wynik = new ArrayList();
