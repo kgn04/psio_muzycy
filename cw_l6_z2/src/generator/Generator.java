@@ -33,7 +33,8 @@ public class Generator {
 	static Piosenka[] baza;
   
 	public static void main (String [] args) throws ClassNotFoundException, IOException {
-
+		
+		TextIO.zresetujDane();
 
 		TextIO.pobierzDane();
 		Dane.initializeDatabase();

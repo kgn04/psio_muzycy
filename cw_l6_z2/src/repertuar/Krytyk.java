@@ -6,8 +6,10 @@ import muzycy.Muzyk;
 public class Krytyk extends Osoba{
 
 
-	public Krytyk(String imie, String nazwisko) {
-		super(imie, nazwisko);
+	public Krytyk(String imie, String nazwisko, int stawka) {
+		super(imie, nazwisko, stawka);
+		
+		
 
 		
 	}

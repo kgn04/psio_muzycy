@@ -51,9 +51,7 @@ public abstract class Muzyk extends Osoba implements Serializable{
 
 
 
-	public void setStawka(int stawka) {
-		this.stawka = stawka;
-	}
+
 
 
 	public Piosenka[] getRepertuar() {

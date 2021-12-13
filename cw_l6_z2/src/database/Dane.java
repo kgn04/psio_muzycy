@@ -41,7 +41,8 @@ public class Dane {
 
 		
 		//hotfix
-		poprawCeneMuzykow(muzycy);	
+
+		
 	}
 	
 
@@ -262,16 +263,7 @@ public class Dane {
 		return repertuar;
 	}
 	
-	public static void poprawCeneMuzykow(Muzyk[] muzycy) {
-		
-		//hotfix
-		for(int i = 0; i < muzycy.length; i++) {
-			
-			muzycy[i].setStawka(300*muzycy[i].getPoziomUmiejetnosci());
-	
-		}
-		
-	}
+
 	
 	public static void wydrukujMuzykow(Muzyk[] muzycy) {
 		for(int i = 0; i< muzycy.length; i++) {
