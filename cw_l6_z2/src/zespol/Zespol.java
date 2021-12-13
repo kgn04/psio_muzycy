@@ -136,7 +136,7 @@ public class Zespol {
 
 
         if ( wynik.size() == 4 && CzyWszystkieFunkcje )
-            return new Zespol( wynik.get(3) , wynik.get(1) , wynik.get(2) , wynik.get(0) );
+            return new Zespol( (Technik)wynik.get(3) , (Wokalista)wynik.get(1) , (Pianista)wynik.get(2) , (Saksofonista)wynik.get(0) );
 
         else
             return null;
