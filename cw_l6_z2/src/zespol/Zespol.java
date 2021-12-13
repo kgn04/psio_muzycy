@@ -13,6 +13,7 @@ import muzycy.Wokalista;
 import technika.Technik;
 import java.lang.Math;
 import static java.lang.Math.*;
+import muzycy.*;
 public class Zespol {
 	
 	private Technik technik;
@@ -92,7 +93,7 @@ public class Zespol {
 	public static Zespol wybierzZespol2(List<Technik> technicy , List <Wokalista> wokalisci , List <Pianista> pianisci , List <Saksofonista> saksofonisci , int budzet )
     {
 		
-        List <Osoba> osoby = null;
+        ArrayList <Osoba> osoby = new ArrayList<Osoba>();
 
         osoby.addAll(wokalisci);
         osoby.addAll(pianisci);
