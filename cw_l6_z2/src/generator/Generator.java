@@ -3,6 +3,7 @@ package generator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import instrument.Keyboard;
@@ -34,10 +35,13 @@ public class Generator {
   
 	public static void main (String [] args) throws ClassNotFoundException, IOException {
 		
-		TextIO.zresetujDane();
-
-		TextIO.pobierzDane();
+		
 		Dane.initializeDatabase();
+//		TextIO.zresetujDane();
+		
+		
+		TextIO.pobierzDane();
+		
 
 		
 		podstawowy = Dane.getPodstawowy();
@@ -63,7 +67,7 @@ public class Generator {
 		
 		
 		sendBrief(wokalista, pianista, technik, saksofonista);			
-//		Zespol.optimalTeam(technicy, muzycy, 1500);
+		Zespol.optimalTeam(technicy, muzycy, 2500);
 
 		
 //		System.out.println("-----------------");

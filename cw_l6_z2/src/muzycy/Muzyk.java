@@ -9,6 +9,7 @@ public abstract class Muzyk extends Osoba implements Serializable{
 	private int poziomUmiejetnosci;
 
 	private Piosenka[] repertuar ;
+	private static final long serialVersionUID = 1234567L;
 	
 	public Muzyk(String imie, String nazwisko, int stawka,int poziomUmiejetnosci, Piosenka[] repertuar) {
 		
