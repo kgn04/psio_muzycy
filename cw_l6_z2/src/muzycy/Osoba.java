@@ -6,18 +6,21 @@ abstract public class Osoba implements Serializable{
 
 	private String imie;
 	private String nazwisko;
+	private int stawka;
 	
-	public Osoba(String imie, String nazwisko) {
+	public Osoba(String imie, String nazwisko, int stawka) {
 		
 		this.imie = imie;
 		this.nazwisko = nazwisko;
-		
+		this.stawka = stawka;
 	}
 	public Osoba() {
 		
 	}
 
-
+	public int getStawka() {
+		return stawka;
+	}
 
 
 

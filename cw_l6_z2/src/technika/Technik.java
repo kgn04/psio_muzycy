@@ -13,8 +13,8 @@ public class Technik extends Osoba{
 	
 	public Technik(String imie, String nazwisko, int stawka, int poziom_umiejetnosci, String preferowany_stol, Rider rider){
 		
-		super(imie, nazwisko);
-		this.stawka = stawka;
+		super(imie, nazwisko, stawka);
+
 		this.poziom_umiejetnosci = poziom_umiejetnosci;
 		this.preferowany_stol = preferowany_stol;
 		this.rider = rider;
@@ -24,9 +24,7 @@ public class Technik extends Osoba{
 	}
 
 
-	public int getStawka() {
-		return stawka;
-	}
+
 
 
 	public void setStawka(int stawka) {

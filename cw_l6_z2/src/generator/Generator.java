@@ -70,7 +70,7 @@ public class Generator {
 //		pianista.play(pianista);
 //		wokalista.play(wokalista);
 		
-		
+
 		
 		TextIO.zapiszDane();
 	}

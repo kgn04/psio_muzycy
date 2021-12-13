@@ -7,15 +7,15 @@ import repertuar.Piosenka;
 public abstract class Muzyk extends Osoba implements Serializable{
 
 	private int poziomUmiejetnosci;
-	private int stawka;
+
 	private Piosenka[] repertuar ;
 	
-	public Muzyk(String imie, String nazwisko, int poziomUmiejetnosci, int stawka,Piosenka[] repertuar) {
+	public Muzyk(String imie, String nazwisko, int stawka,int poziomUmiejetnosci, Piosenka[] repertuar) {
 		
-		super(imie, nazwisko);
+		super(imie, nazwisko,stawka);
 
 		this.poziomUmiejetnosci = poziomUmiejetnosci;
-		this.stawka = stawka;
+
 		this.repertuar=repertuar;
 		
 		
@@ -48,9 +48,7 @@ public abstract class Muzyk extends Osoba implements Serializable{
 	}
 
 
-	public int getStawka() {
-		return stawka;
-	}
+
 
 
 	public void setStawka(int stawka) {
